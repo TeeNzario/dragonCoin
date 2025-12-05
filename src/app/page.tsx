@@ -5,11 +5,16 @@ import { useState } from 'react'
 import { Textfit } from 'react-textfit'
 
 export default function Home() {
+  const coinCount = localStorage.getItem('coin');
+
   const [pop, setPop] = useState(false); 
-  const [coin, setCoin] = useState(0);
+  const [coin, setCoin] = useState(coinCount ? parseInt(coinCount) : 0);
+
+  useEffect(() => {
+    localStorage.setItem('coin', coin.toString()); 
+  }, [coin]);
 
   const hadleClick = () => {
-    console.log('clicked')
       setPop(true)
 
     setTimeout(() => {
