@@ -21,11 +21,12 @@ export default function Home() {
       setPop(false)
     }, 100)
 
-    setCoin(coin + 61171)
+    setCoin(coin + 6171)
   }
   return (
     <div className="h-screen bg-[#FFFAEA]">
       <div className="absolute top-5 right-5 flex items-center justify-center bg-[#F5AB3E] border border-[#F5DE93] w-[5rem] h-[2em] rounded-full">
+        <Image className="absolute top-[-0.6rem] left-[-1.8rem]" src="/images/coin_icon.png" alt="coin_img" width={45} height={45} />
         <Textfit mode="single" max={20} className="text-white font-bold text-end ml-2 w-[3rem]">{coin}</Textfit>
       </div>
       <div className="container w-full h-full flex flex-col items-center justify-center">
