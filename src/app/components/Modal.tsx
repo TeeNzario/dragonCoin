@@ -15,23 +15,27 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
   return (
 
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-orange-50/50 backdrop-blur-sm">
-        <div className="relative bg-white rounded-2xl p-6 w-[90%] max-w-lg shadow-xl animate-in fade-in zoom-in duration-200">
+        <div className="relative bg-[#1E1E1E] rounded-2xl px-6 py-18 w-[90%] max-w-lg shadow-xl">
             <button
                 onClick={onClose}
-                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors"
+                className="absolute top-4 right-4 text-white font-bold hover:text-gray-700 transition-colors"
             >
                 ✕
             </button>
             <div className="flex flex-col gap-4">
-                <h2 className="text-2xl font-bold text-[#B5601D]">Create New Post</h2>
+                <input 
+                    type="text"
+                    placeholder="TOPIC"
+                    className="w-full h-15 p-5 bg-white rounded-xl font-bold text-[1.2rem] focus:outline-none focus:ring-2 focus:ring-[#F5AB3E]"
+                />
                 <textarea 
-                    className="w-full h-32 p-3 border-2 border-[#F5AB3E] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#B5601D]"
-                    placeholder="What's on your mind?"
+                    className="w-full h-55 p-5 bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F5AB3E]"
+                    placeholder="MESSAGE"
                 />
                 <button 
-                    className="w-full py-3 bg-[#B5601D] text-white font-bold rounded-xl hover:bg-[#8a4a16] transition-colors"
+                    className="w-full py-3 bg-[#F5AB3E] text-white text-[1.5rem] font-bold rounded-3xl hover:bg-[#8a4a16] transition-colors"
                 >
-                    Post
+                    SEND
                 </button>
             </div>
         </div>
