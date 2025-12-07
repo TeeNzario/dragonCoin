@@ -5,26 +5,37 @@ import MessageCard from '../components/MessageCard'
 import Modal from '../components/Modal'
 import { useState } from 'react'
 
+interface Message {
+  id: number;
+  topic: string;
+  message: string;
+}
+
 export default function Post() {
     const [modalOpen, setModalOpen] = useState(false);
+    const [messages, setMessages] = useState<Message[]>([]);
+
+    const handleAddMessage = (topic: string, message: string) => {
+        setMessages(prev => [
+        ...prev,
+        { id: Date.now(), topic, message }
+        ]);
+    };
     
-
-    console.log(modalOpen)
-
+    
   return (
     <div className="h-screen relative bg-[#FFFAEA]">
         <div className="h-full w-full relative flex items-center justify-center">
             <div className="h-[80%] w-[80%] relative">
                 <div className="h-full w-full pt-5 flex flex-col gap-5 items-center bg-white rounded-2xl overflow-auto">
                     {/* posts */}
-                    <MessageCard />
-                    <MessageCard />
-                    <MessageCard />
-                    <MessageCard />
-                    <MessageCard />
-                    <MessageCard />
-                    <MessageCard />
-                    <MessageCard />
+                    {messages.length === 0 ? (
+                        <p className="text-gray-500 text-center">No messages yet.</p>
+                    ) : (
+                        messages.map((msg) => (
+                            <MessageCard key={msg.id} topic={msg.topic} message={msg.message} />
+                        ))
+                    )}
                 </div>
             </div>
        </div>
@@ -39,7 +50,7 @@ export default function Post() {
                 <Image src="/images/plus_icon.png" alt="plus_img" width={30} height={30} />
             </button>
         </div>
-        <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+        <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} onSubmit={handleAddMessage} />
   </div>
   )
 }
