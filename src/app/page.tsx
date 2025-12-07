@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { Textfit } from 'react-textfit'
+import Link from 'next/link'
 
 export default function Home() {
   const coinCount = localStorage.getItem('coin');
@@ -21,7 +22,7 @@ export default function Home() {
       setPop(false)
     }, 100)
 
-    setCoin(coin + 6171)
+    setCoin(coin + 71)
   }
   return (
     <div className="h-screen bg-[#FFFAEA] flex flex-col items-center justify-center">
@@ -39,9 +40,9 @@ export default function Home() {
         <button className="bg-gray-500 h-[3rem] w-[8rem] rounded-full hover:scale-110 transition-all duration-160 ease-in-out">
           <p className="text-white font-bold text-center text-[1.5rem]">?</p>
         </button>
-        <button className="bg-[#F5AB3E] h-[3rem] w-[8rem] rounded-full hover:scale-110 transition-all duration-160 ease-in-out cursor-pointer">
+        <Link href="/post" className="bg-[#F5AB3E] h-[3rem] w-[8rem] flex items-center justify-center rounded-full hover:scale-110 transition-all duration-160 ease-in-out cursor-pointer">
           <p className="text-white font-bold text-center text-[1.5rem]">POST</p>
-        </button>
+        </Link>
       </div>
     </div>
   )
