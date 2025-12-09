@@ -30,6 +30,9 @@ export default function Home() {
         <Image className="absolute top-[-0.6rem] left-[-1.8rem]" src="/images/coin_icon.png" alt="coin_img" width={45} height={45} />
         <Textfit mode="single" max={20} className="text-white font-bold text-end ml-2 w-[3rem]">{coin}</Textfit>
       </div>
+      <div className="absolute top-5 left-5">
+        <p className=" font-bold text-[1.5rem]">USERNAME</p>
+      </div>
       <div className="container w-full h-full flex flex-col items-center justify-center">
           <button onClick={hadleClick}>
             <Image className={pop ? "scale-110 transition-all duration-50 ease-in-out" : "scale-100 transition-all duration-50 ease-in-out"} src="/images/main_character.png" alt="dragon_img" width={160} height={160} />

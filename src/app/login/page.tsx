@@ -1,4 +1,5 @@
-'use client'
+'use client'    
+import Link from 'next/link'
 
 export default function Login() {
     return (
@@ -14,6 +15,7 @@ export default function Login() {
                             <button className="text-[0.7rem] text-end text-[#B5601D] cursor-pointer hover:text-gray-700 transition-colors">forgot password?</button>
                         </div>
                         <button className="w-[80%] p-2 bg-[#B5601D] rounded-xl text-white font-bold cursor-pointer hover:bg-[#8a4a16] transition-colors">Login</button>
+                        <p className="text-[0.7rem] text-center text-[#B5601D]">Don't have an account? <Link href="/register" className="text-[#F5AB3E] cursor-pointer hover:text-gray-700 transition-colors">Register</Link></p>
                     </div>
                 </div>
             </div>
