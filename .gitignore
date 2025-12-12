@@ -1,0 +1,8 @@
+# root .gitignore
+.env
+.DS_Store
+dist/
+build/
+logs/
+
+dragon_coin_database.drawio
